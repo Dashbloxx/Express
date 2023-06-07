@@ -1,0 +1,9 @@
+﻿  gui.c
+C:\Users\Admin\source\repos\Express\Express\gui.c(71,22): warning C4133: '=': incompatible types - from 'char [11]' to 'LPCWSTR'
+C:\Users\Admin\source\repos\Express\Express\gui.c(75,32): warning C4133: 'function': incompatible types - from 'char [11]' to 'LPCWSTR'
+C:\Users\Admin\source\repos\Express\Express\gui.c(86,20): warning C4244: 'function': conversion from 'double' to 'int', possible loss of data
+C:\Users\Admin\source\repos\Express\Express\gui.c(97,15): warning C4244: 'return': conversion from 'WPARAM' to 'int', possible loss of data
+  main.c
+C:\Users\Admin\source\repos\Express\Express\main.c(14,21): warning C4244: 'initializing': conversion from 'LONG_PTR' to 'DWORD', possible loss of data
+  Generating Code...
+  Express.vcxproj -> C:\Users\Admin\source\repos\Express\x64\Debug\Express.exe
