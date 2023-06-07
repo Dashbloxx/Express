@@ -2,7 +2,6 @@
 #include <stdbool.h>
 #include <stdio.h>
 
-#include "conf.h"
 #include "gui.h"
 #include "mem.h"
 
