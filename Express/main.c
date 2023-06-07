@@ -1,11 +1,17 @@
 #include <windows.h>
+#include <stdbool.h>
+#include <stdio.h>
 
+#include "conf.h"
 #include "gui.h"
 #include "mem.h"
 
 HWND g_hwnd, g_inject_button, g_script_box, g_clear_button, g_execute_button, g_about_button;
 BYTE code[BUFFER_SIZE];
+FILE* configuration_file;
 int g_roblox_process_id;
+
+bool multiroblox;
 
 int main()
 {
@@ -15,7 +21,5 @@ int main()
     dwStyle &= ~WS_MAXIMIZEBOX;
     SetWindowLongPtr(g_hwnd, GWL_STYLE, dwStyle);
 
-    int nCmdShow = SW_SHOWDEFAULT;
-
-    return WinMain(hInstance, NULL, NULL, nCmdShow);
+    return WinMain(hInstance, NULL, NULL, SW_SHOWDEFAULT);
 }

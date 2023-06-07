@@ -24,34 +24,7 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
             }
             else if ((HWND)lParam == g_inject_button)
             {
-                HANDLE hProcess = OpenProcess(PROCESS_ALL_ACCESS, FALSE, g_roblox_process_id);
-                if (hProcess == NULL) {
-                    MessageBox(NULL, L"Failed to attach to ROBLOX instance. Is ROBLOX running right now?", L"Error", MB_ICONERROR | MB_OK);
-                    return -1;
-                }
-
-                LPVOID pRemoteCode = VirtualAllocEx(hProcess, NULL, BUFFER_SIZE, MEM_COMMIT, PAGE_EXECUTE_READWRITE);
-                if (pRemoteCode == NULL) {
-                    MessageBox(NULL, L"Failed to allocate memory in ROBLOX instance. Is your RAM usage full?", L"Error", MB_ICONERROR | MB_OK);
-                    return -1;
-                }
-
-                if (!WriteProcessMemory(hProcess, pRemoteCode, code, sizeof(code), NULL)) {
-                    MessageBox(NULL, L"Failed to write to allocated memory in ROBLOX instance.", L"Error", MB_ICONERROR | MB_OK);
-                    return -1;
-                }
-
-                HANDLE hRemoteThread = CreateRemoteThread(hProcess, NULL, 0, (LPTHREAD_START_ROUTINE)pRemoteCode, NULL, 0, NULL);
-                if (hRemoteThread == NULL) {
-                    MessageBox(NULL, L"Failed to create a thread in ROBLOX instance. Is your CPU usage full?", L"Error", MB_ICONERROR | MB_OK);
-                    return -1;
-                }
-
-                WaitForSingleObject(hRemoteThread, INFINITE);
-
-                CloseHandle(hRemoteThread);
-                VirtualFreeEx(hProcess, pRemoteCode, 0, MEM_RELEASE);
-                CloseHandle(hProcess);
+                
             }
         }
         break;
