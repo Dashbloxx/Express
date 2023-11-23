@@ -1,4 +1,0 @@
-﻿  dllmain.c
-C:\Users\Matthew\source\repos\Express\Probe\dllmain.c(24,19): warning C4047: 'function': 'FILE **' differs in levels of indirection from 'FILE *'
-C:\Users\Matthew\source\repos\Express\Probe\dllmain.c(24,19): warning C4024: 'freopen_s': different types for formal and actual parameter 1
-  Probe.vcxproj -> C:\Users\Matthew\source\repos\Express\x64\Debug\Probe.dll
